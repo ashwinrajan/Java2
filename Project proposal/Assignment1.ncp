@@ -1,0 +1,272 @@
+<Project>
+  <Name>Assignment1</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Name</Name>
+        <Access>Public</Access>
+        <Location left="956" top="97" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String firstName</Member>
+        <Member type="Field">private String lastName</Member>
+        <Member type="Constructor">public Name()</Member>
+        <Member type="Constructor">public Name(String firstName, String lastName)</Member>
+        <Member type="Constructor">public Name(String firstName)</Member>
+        <Member type="Method">public String getFirstName()</Member>
+        <Member type="Method">public String getLastName()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Address</Name>
+        <Access>Public</Access>
+        <Location left="1146" top="167" />
+        <Size width="162" height="400" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String streetNum</Member>
+        <Member type="Field">private String streetName</Member>
+        <Member type="Field">private String cityName</Member>
+        <Member type="Field">private String provinceName</Member>
+        <Member type="Field">private String postalCode</Member>
+        <Member type="Field">private finalString COUNTRY</Member>
+        <Member type="Constructor">public Address()</Member>
+        <Member type="Constructor">public Address(String streetNum, String streetName, String cityName, String provinceName, String postalCode)</Member>
+        <Member type="Method">public String getStreetNum()</Member>
+        <Member type="Method">public String getStreetName()</Member>
+        <Member type="Method">public String getCityName()</Member>
+        <Member type="Method">public String getProvinceName()</Member>
+        <Member type="Method">public String getPostalCode()</Member>
+        <Member type="Method">public String getCountry()</Member>
+        <Member type="Method">public void setStreetNum(String streetNum)</Member>
+        <Member type="Method">public void setStreetName(String streetName)</Member>
+        <Member type="Method">public void setCityName(String cityName)</Member>
+        <Member type="Method">public void setProvinceName(String provinceName)</Member>
+        <Member type="Method">public void setPostalCode(String postalCode)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Person</Name>
+        <Access>Public</Access>
+        <Location left="510" top="167" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Name name</Member>
+        <Member type="Field">public Address address</Member>
+        <Member type="Field">private String dateOfBirth</Member>
+        <Member type="Field">private String phoneNumber</Member>
+        <Member type="Constructor">public Person()</Member>
+        <Member type="Method">public void setName(String firstName, String lastName)</Member>
+        <Member type="Method">public void setAddress(String streetNum, String streetName, String cityName, String provinceName, String postalCode)</Member>
+        <Member type="Method">public void setDateOfBirth(String dateOfBirth)</Member>
+        <Member type="Method">public void setPhoneNumber(String phoneNumber)</Member>
+        <Member type="Method">public override String toString()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Staff</Name>
+        <Access>Public</Access>
+        <Location left="218" top="254" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int userId</Member>
+        <Member type="Field">private String nationality</Member>
+        <Member type="Constructor">public Staff()</Member>
+        <Member type="Method">public void setNationality()</Member>
+        <Member type="Method">public void generateUserId()</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Receptionist</Name>
+        <Access>Public</Access>
+        <Location left="361" top="613" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String annualSalary</Member>
+        <Member type="Constructor">public Receptionist()</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Name: Ashwin Rajan
+
+             Java 2
+             Project
+       Final UML Diagram</Text>
+        <Location left="510" top="41" />
+        <Size width="162" height="92" />
+      </Entity>
+      <Entity type="Class">
+        <Name>Customer</Name>
+        <Access>Public</Access>
+        <Location left="728" top="378" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">String passportNum</Member>
+        <Member type="Field">String nationality</Member>
+        <Member type="Field">public Reservation newReservation</Member>
+        <Member type="Field">public Payment newPayment</Member>
+        <Member type="Constructor">public Customer()</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Payment</Name>
+        <Access>Public</Access>
+        <Location left="931" top="465" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">String name</Member>
+        <Member type="Field">private String creditCardType</Member>
+        <Member type="Field">String creditcardNum</Member>
+        <Member type="Constructor">public Payment()</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Rooms</Name>
+        <Access>Public</Access>
+        <Location left="931" top="702" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">String roomNum</Member>
+        <Member type="Field">private String roomType</Member>
+        <Member type="Field">private double totalroomPrice</Member>
+        <Member type="Field">private double kingSuiteRate</Member>
+        <Member type="Field">private double queenSuiteRate</Member>
+        <Member type="Field">private double singleSuiteRate</Member>
+        <Member type="Constructor">public Rooms()</Member>
+        <Member type="Method">public void totalPriceCalculation()</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Reservation</Name>
+        <Access>Public</Access>
+        <Location left="589" top="613" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Date checkIn</Member>
+        <Member type="Field">Date checkOut</Member>
+        <Member type="Field">int recervationID</Member>
+        <Member type="Field">public Room newroom</Member>
+        <Member type="Field">protected int reservationId</Member>
+        <Member type="Field">private int totalDaysStay</Member>
+        <Member type="Constructor">public Reservation()</Member>
+        <Member type="Method">public void daysBetween()</Member>
+        <Member type="Method">public void generateReservationID()</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HotelManager</Name>
+        <Access>Public</Access>
+        <Location left="94" top="613" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String annualSalary</Member>
+        <Member type="Constructor">public HotelManager()</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="3" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>405</X>
+          <Y>278</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>334</X>
+          <Y>506</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="2" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>697</X>
+          <Y>264</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>930</X>
+          <Y>264</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>697</X>
+          <Y>292</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1121</X>
+          <Y>366</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="6" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>697</X>
+          <Y>360</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="6" second="7">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>916</X>
+          <Y>550</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="9" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>906</X>
+          <Y>887</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="6" second="9">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>699</X>
+          <Y>550</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>666</X>
+          <Y>588</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="10" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

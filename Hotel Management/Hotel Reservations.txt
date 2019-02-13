@@ -1,0 +1,15 @@
+Name: ashwin rajan
+Address: 87  jhkhih, hguih, ON, L6Y4L8, Canada
+Phone Number: 7676
+Passport Num: 89897
+Nationality: indian
+Check In: 12/04/2012
+Check Out: 16/04/2012
+Reservation Id: 5160412
+Room Type: KingSuite
+Room Num: 78
+Total Room Price: 559.96
+Credit Card Type: Visa
+Credit Card name: ashwin
+Credit Card Number: 4111111111111111
+

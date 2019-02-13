@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xml:lang=
+"en-US">
+<head>
+<title>JRE Deployment with Active Directory</title><link rel="stylesheet" href="../../../../technotes/css/guide.css" />
+</head>
+<body>
+<!-- STATIC HEADER -->
+
+<!-- header start -->
+<div id="javaseheader">
+<div id="javaseheaderlogo">
+<img src="../../../../images/javalogo.gif"
+alt="Java logo" />
+</div>
+<div id="javaseheaderindex">
+
+<a href=
+"../../../../index.html">Documentation Contents</a>
+</div>
+<div class="clear"></div>
+</div>
+
+<!-- header end -->
+
+
+<h1>JRE Deployment with Active Directory</h1>
+
+<p>This procedure describes how to obtain the <code>.msi</code>
+file necessary to deploy the Java Runtime Environment (JRE) across
+a Windows 2000/Windows XP Active Directory-based network. It works
+for version 1.4.2 and later of the JRE installers. Sun includes an
+<code>.msi</code> (Microsoft Installer) file bundled up in the JRE
+Windows Offline installers. The <code>.msi</code> file extracted
+below can be assigned to an Active Directory software distribution
+policy.</p>
+
+<ol>
+<li><p>Download and launch the Sun <a href=
+"http://java.sun.com/j2se/1.5.0/download.jsp">JRE Windows Offline
+Installion</a> executable (<code>.exe</code>) file.</p></li>
+
+<li><p>Retrieve the "<code>.msi</code>" file from the
+<code>LocalAppData</code> folder (the user's <code>Application
+Data</code> folder). The <code>LocalAppData</code> folder will
+differ for each Windows platform.</p></li>
+
+<li><p>Inside this folder you will find a folder named:</p>
+<pre class="codeblock">{3248F0A6-6813-11D6-A77b-00B0D0150000}</pre>
+<p>The first 2 digits are "71" for version 1.4.2_xx, and "32" for
+1.5.0_xx. The last 6 digits of this <code>CLSID</code> and the name
+of the <code>.msi</code> file correspond to the release number. A
+<code>CLSID</code> ending with "150000" means version 1.5.0_00, and
+"142010" means verision 1.4.2_01</p></li>
+
+<li><p>From there, you can use Active Directory to distribute this
+<code>.msi</code> file to as many client Windows platforms as you
+want.</p></li>
+
+<li><p>If you want to register the JRE as the default VM of Internet
+Explorer and Mozilla, you will have to create a transform that will
+set the variables <code>IEXPLORER</code> and <code>MOZILLA</code>
+to <code>1</code> in the <code>Property.idt</code> table. You can
+find instructions on <a href=
+"http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/transforms.asp">
+how to generate and use transforms</a> at the Microsoft MSDN
+site.</p></li>
+
+</ol>
+
+<!--  footer start -->
+<div id="javasefooter">
+<div class="hr">
+<hr /></div>
+<div id="javasecopyright">
+<img id="oraclelogofooter" src=
+"../../../../images/oraclelogo.gif" alt="Oracle and/or its affiliates"
+border="0" width="100" height="29" name=
+"oraclelogofooter" />
+
+<a href="../../../../legal/cpyr.html">Copyright
+&#169;</a> 1993, 2011, Oracle and/or its affiliates. All rights
+reserved.</div>
+<div id="javasecontactus">
+<a href=
+"http://download.oracle.com/javase/feedback.html">Contact
+Us</a>
+</div>
+</div>
+<!-- footer end -->
+
+<!-- STATIC FOOTER -->
+
+</body>
+</html>

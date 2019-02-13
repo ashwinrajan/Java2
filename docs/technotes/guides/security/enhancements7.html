@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xml:lang=
+"en-US">
+<head>
+<title>Java SE 7 Release Security Enhancements</title><link rel="stylesheet" href="../../../technotes/css/guide.css" />
+</head>
+<body>
+<!-- STATIC HEADER -->
+
+<!-- header start -->
+<div id="javaseheader">
+<div id="javaseheaderlogo">
+<img src="../../../images/javalogo.gif"
+alt="Java logo" />
+</div>
+<div id="javaseheaderindex">
+
+<a href=
+"../../../index.html">Documentation Contents</a>
+</div>
+<div class="clear"></div>
+</div>
+
+<!-- header end -->
+
+
+
+<h1>Java&trade; SE 7 Release Security Enhancements</h1>
+
+<p>The Java SE 7 release adds the following features:</p>
+<ul>
+<li><b>Elliptic Curve Cryptography (ECC)</b>
+<dl>
+<dd>A new native provider has been added to the Java SE 7 release
+that provides several ECC-based algorithms (ECDSA/ECDH). 
+For more information, see
+<a href="http://download.oracle.com/javase/7/docs/technotes/guides/security/SunProviders.html#SunEC">The SunEC Provider's Supported Algorithms</a> section in the
+<a href="http://download.oracle.com/javase/7/docs/technotes/guides/security/SunProviders.html">Java Cryptography Architecture Oracle Providers Documentation</a>.</dd>
+</dl>
+<br /></li>
+<li><b>CertPath Algorithm Disabling</b>
+<dl>
+<dd>Weak cryptographic algorithms can now be disabled. For example,
+the MD2 digest algorithm is no longer considered secure. The Java
+SE 7 release provides a mechanism for denying the use of specific
+algorithms in certification path processing and TLS
+handshaking. See <a href="certpath/CertPathProgGuide.html#AppD">Appendix D: Disabling Cryptographic Algorithms</a> in <a href="certpath/CertPathProgGuide.html">Java PKI Programmer's Guide</a> and <a href="jsse/JSSERefGuide.html#DisabledAlgorithms">Disabled Cryptographic Algorithms</a> in <a href="jsse/JSSERefGuide.html">Java Secure Socket Extension (JSSE)
+Reference Guide</a> for more information.</dd>
+</dl>
+<br /></li>
+<li><b>JSSE (SSL/TLS)</b>
+<ul>
+<li><b>TLS 1.1</b>
+<dl>
+<dd>The SunJSSE provider now supports TLS 1.1 as described in
+<a href="http://www.ietf.org/rfc/rfc4346.txt">RFC 4346</a>. The
+most important update is protection against cipher block chaining
+(CBC) attacks.</dd>
+</dl>
+<br /></li>
+<li><b>TLS 1.2</b>
+<dl>
+<dd>The SunJSSE provider now supports TLS 1.2 as described in
+<a href="http://www.ietf.org/rfc/rfc5246.txt">RFC 5246</a>. Among
+other things, it specifies different internal hashing algorithms,
+adds new cipher suites, and contains improved flexibility,
+particularly for negotiation of cryptographic algorithms.</dd>
+</dl>
+<br /></li>
+<li><b>Weak cipher suites deprecated</b>
+<dl>
+<dd>Per <a href="http://www.ietf.org/rfc/rfc4346.txt">RFC 4346</a>,
+<a href="http://www.ietf.org/rfc/rfc5246.txt">RFC 5246</a>, and
+<a href="http://www.ietf.org/rfc/rfc5469.txt">RFC 5469</a>, some
+cipher suites have been made obsolete and should not be used. These
+obsolete suites are all disabled by default in SunJSSE. For
+details, consult the cipher suite lists in <a href=
+"SunProviders.html#SunJSSEProvider">the documentation about the
+SunJSSE provider</a>.</dd>
+</dl>
+<br /></li>
+<!--
+          <dd>
+          Per RFC 5246 (and <a href="http://www.ietf.org/rfc/rfc5469.txt">RFC 5469</a>),
+          the SunJSSE provider does not allow the following cipher suites to be
+          used in TLS 1.2 sessions.
+          <ul>
+            <li>SSL_RSA_WITH_DES_CBC_SHA</li>
+            <li>SSL_DHE_RSA_WITH_DES_CBC_SHA</li>
+            <li>SSL_DHE_DSS_WITH_DES_CBC_SHA</li>
+            <li>SSL_DH_anon_WITH_DES_CBC_SHA</li>
+            <li>TLS_KRB5_WITH_DES_CBC_SHA</li>
+            <li>TLS_KRB5_WITH_DES_CBC_MD5</li>
+          </ul>
+        <br />
+          For backward compatibility, the SunJSSE provider continues to support the
+          following single-DES cipher suites in TLS 1.1 and previous versions,
+          but will remove them from the default enabled list.
+          <ul>
+            <li>SSL_RSA_WITH_DES_CBC_SHA</li>
+            <li>SSL_DHE_RSA_WITH_DES_CBC_SHA</li>
+            <li>SSL_DHE_DSS_WITH_DES_CBC_SHA</li>
+            <li>SSL_DH_anon_WITH_DES_CBC_SHA</li>
+          </ul>
+        <br />
+          Finally, weak export cipher suites, obsoleted in TLS 1.1, are now disabled
+          by default, but still supported for backward compatibility.
+          <ul>
+            <li>SSL_RSA_EXPORT_WITH_RC4_40_MD5</li>
+            <li>SSL_RSA_EXPORT_WITH_DES40_CBC_SHA</li>
+            <li>SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA</li>
+            <li>SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA</li>
+          </ul>
+          </dd>
+        </dl>
+        <br />
+      </li>
+        -->
+<li><b>Connection-sensitive trust management</b>
+<dl>
+<dd>Both trust managers and key managers now have the ability to
+examine parameters of the TLS connection, specifically the
+<code>SSLSession</code> under construction, during the handshake.
+For example, a trust manager might restrict the types of
+certificates used based on the list of valid signature
+algorithms.</dd>
+</dl>
+<br /></li>
+<li><b>Endpoint verification</b>
+<dl>
+<dd>An endpoint identification algorithm can be specified to verify
+that a remote computer's host address matches its supplied
+certificate. Although this type of verification was previously
+performed for the HTTPS protocol (see <a href=
+"../../../api/javax/net/ssl/HttpsURLConnection.html"><code>HttpsURLConnection</code></a>
+and <a href=
+"../../../api/javax/net/ssl/HostnameVerifier.html"><code>HostnameVerifier</code></a>),
+such verification can now be optionally performed at the TLS
+level.</dd>
+</dl>
+<br /></li>
+<li><b>TLS renegotiation</b>
+<dl>
+<dd>Java SE supports <a href=
+"http://www.ietf.org/rfc/rfc5746.txt">RFC 5746</a>, which <a href=
+"jsse/JSSERefGuide.html#tlsRenegotiation">fixes a renegotiation
+issue</a> in the TLS protocol.</dd>
+</dl>
+<br /></li>
+<li><b>SSLv2Hello disabled by default on the client</b>
+<dl>
+<dd>In Java SE 7, SSLv2Hello is removed from the default enabled
+protocol list on the client.</dd>
+</dl>
+<br /></li>
+<li><b>Algorithm disabling</b>
+<dl>
+<dd>Weak cryptographic algorithms can now be disabled, as
+previously described.</dd>
+</dl>
+<br /></li>
+<li><b>Server Name Indication (SNI) for JSSE client</b>
+<dl>
+<dd>The Java SE 7 release supports the Server Name Indication (SNI)
+extension in the JSSE client. SNI is described in <a href=
+"http://www.ietf.org/rfc/rfc4366.txt">RFC 4366</a>. This enables
+TLS clients to connect to virtual servers.</dd>
+</dl>
+<br /></li>
+<li><b>Tighter checking of EncryptedPreMasterSecret version
+numbers</b>
+<dl>
+<dd>Java SE 7 tightens version number checking during TLS 1.1 and
+TLS 1.2 handshaking. See the <a href=
+"jsse/JSSERefGuide.html#premasterChecking">JSSE Reference Guide</a>
+for more information.</dd>
+</dl>
+<br /></li>
+</ul>
+</li>
+</ul>
+<!-- Body text ends here -->
+
+<!--  footer start -->
+<div id="javasefooter">
+<div class="hr">
+<hr /></div>
+<div id="javasecopyright">
+<img id="oraclelogofooter" src=
+"../../../images/oraclelogo.gif" alt="Oracle and/or its affiliates"
+border="0" width="100" height="29" name=
+"oraclelogofooter" />
+
+<a href="../../../legal/cpyr.html">Copyright
+&#169;</a> 1993, 2011, Oracle and/or its affiliates. All rights
+reserved.</div>
+<div id="javasecontactus">
+<a href=
+"http://download.oracle.com/javase/feedback.html">Contact
+Us</a>
+</div>
+</div>
+<!-- footer end -->
+
+<!-- STATIC FOOTER -->
+
+</body>
+</html>

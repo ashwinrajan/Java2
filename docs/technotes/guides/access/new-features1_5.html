@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<style type="text/css">
+/*<![CDATA[*/
+        
+p {margin-left: 18pt;}
+ul li, ul ul li {font-weight: normal;}
+a               {font-weight: bold;}
+
+/*]]>*/
+</style>
+<title>Accessibility - New Features</title><link rel="stylesheet" href="../../../technotes/css/guide.css" />
+</head>
+<body>
+<!-- STATIC HEADER -->
+
+<!-- header start -->
+<div id="javaseheader">
+<div id="javaseheaderlogo">
+<img src="../../../images/javalogo.gif"
+alt="Java logo" />
+</div>
+<div id="javaseheaderindex">
+
+<a href=
+"../../../index.html">Documentation Contents</a>
+</div>
+<div class="clear"></div>
+</div>
+
+<!-- header end -->
+
+
+
+<h1>Accessibility</h1>
+<h2>New Features in Java&trade; 2 Platform Standard Edition 5</h2>
+
+<!-- Body text begins here -->
+<p>The features described here were introduced in Java 2 Platform
+Standard Edition 5. These features are also part of subsequent
+releases of the Java platform. Many of these additions were made to
+maintain compatibility between the Java Accessibility API and the
+GNOME Accessibility Framework, described at <a href=
+"http://projects.gnome.org/accessibility/">http://projects.gnome.org/accessibility/</a></p>
+<h2>Contents</h2>
+<p><a href="#action">AccessibleAction New Constant</a><br />
+<a href="#context">AccessibleContext New Constants</a><br />
+<a href="#relation">AccessibleRelation New Constants</a><br />
+<a href="#role">AccessibleRole New Constants</a><br />
+<a href="#state">AccessibleState New Constants</a><br />
+<a href="#text">AccessibleText New Constants</a><br />
+<a href="#api">API Enhancements</a><br />
+<a href="#extended">AccessibleExtendedText</a><br />
+<a href="#stream">AccessibleStreamable</a><br />
+<a href="#spinner">Accessibility Support for JSpinner and
+ProgressMonitor</a><br /></p>
+<hr />
+<h3><a name="action" id="action">AccessibleAction New
+Constant</a></h3>
+<p>Class <a href=
+"../../../api/javax/accessibility/AccessibleAction.html"><b><tt>AccessibleAction</tt></b></a>
+contains the following new constant:</p>
+<ul>
+<li><tt>TOGGLE_EXPAND</tt></li>
+</ul>
+<h3><a name="context" id="context">AccessibleContext New
+Constants</a></h3>
+<p>Class <a href=
+"../../../api/javax/accessibility/AccessibleContext.html"><b><tt>AccessibleContext</tt></b></a>
+contains the following new constants:</p>
+<ul>
+<li><tt>ACCESSIBLE_COMPONENT_BOUNDS_CHANGE</tt></li>
+<li><tt>ACCESSIBLE_INVALIDATE_CHILDREN</tt></li>
+<li><tt>ACCESSIBLE_TEXT_ATTRIBUTE_CHANGED</tt></li>
+</ul>
+<h3><a name="relation" id="relation">AccessibleRelation New
+Constants</a></h3>
+<p>Class <a href=
+"../../../api/javax/accessibility/AccessibleRelation.html"><b><tt>AccessibleRelation</tt></b></a>
+contains the following new constants:</p>
+<ul>
+<li><tt>CHILD_NODE_OF</tt></li>
+<li><tt>CHILD_NODE_OF_PROPERTY</tt></li>
+<li><tt>EMBEDS</tt></li>
+<li><tt>EMBEDS_PROPERTY</tt></li>
+<li><tt>EMBEDDED_BY</tt></li>
+<li><tt>EMBEDDED_BY_PROPERTY</tt></li>
+<li><tt>FLOWS_FROM</tt></li>
+<li><tt>FLOWS_FROM_PROPERTY</tt></li>
+<li><tt>FLOWS_TO</tt></li>
+<li><tt>FLOWS_TO_PROPERTY</tt></li>
+<li><tt>PARENT_WINDOW_OF</tt></li>
+<li><tt>PARENT_WINDOW_OF_PROPERTY</tt></li>
+<li><tt>SUBWINDOW_OF</tt></li>
+<li><tt>SUBWINDOW_OF_PROPERTY</tt></li>
+</ul>
+<h3><a name="role" id="role">AccessibleRole New Constants</a></h3>
+<p>Class <a href=
+"../../../api/javax/accessibility/AccessibleRole.html"><b><tt>AccessibleRole</tt></b></a>
+contains the following new constants:</p>
+<ul>
+<li><tt>EDITBAR</tt></li>
+<li><tt>FOOTER</tt></li>
+<li><tt>HEADER</tt></li>
+<li><tt>PARAGRAPH</tt></li>
+<li><tt>PROGRESS_MONITOR</tt></li>
+<li><tt>RULER</tt></li>
+</ul>
+<h3><a name="state" id="state">AccessibleState New
+Constants</a></h3>
+<p>Class <a href=
+"../../../api/javax/accessibility/AccessibleState.html"><b><tt>AccessibleState</tt></b></a>
+contains the following new constants:</p>
+<ul>
+<li><tt>INDETERMINATE</tt></li>
+<li><tt>MANAGES_DESCENDANTS</tt></li>
+<li><tt>TRANSIENT</tt></li>
+<li><tt>TRUNCATED</tt></li>
+</ul>
+<h3><a name="text" id="text">AccessibleText New Constants</a></h3>
+<p>Class <a href=
+"../../../api/javax/accessibility/AccessibleText.html"><b><tt>AccessibleText</tt></b></a>
+contains the following new constants:</p>
+<ul>
+<li><tt>LINE</tt></li>
+<li><tt>ACCESSIBLE_CHANGED_TEXT</tt></li>
+<li><tt>ATTRIBUTE_RUN</tt></li>
+</ul>
+<h3><a name="api" id="api">API Enhancements</a></h3>
+<p>The following new classes and interfaces have been added to the
+Java<sup><font size="-2">TM</font></sup> Accessibility API:</p>
+<ul>
+<li><b><a href=
+"../../../api/javax/accessibility/AccessibleExtendedText.html"><tt>javax.accessibility.AccessibleExtendedText</tt></a></b></li>
+<li><b><a href=
+"../../../api/javax/accessibility/AccessibleStreamable.html"><tt>javax.accessibility.AccessibleStreamable</tt></a></b></li>
+</ul>
+<h3><a name="extended" id=
+"extended">AccessibleExtendedText</a></h3>
+<p>Interface <a href=
+"../../../api/javax/accessibility/AccessibleExtendedText.html"><b><tt>
+AccessibleExtendedText</tt></b></a> provides support for braille
+and screen reader review mode.</p>
+<h3><a name="stream" id="stream">AccessibleStreamable</a></h3>
+<p>Interface <a href=
+"../../../api/javax/accessibility/AccessibleStreamable.html"><b><tt>
+AccessibleStreamable</tt></b></a> provides a stream interface to
+raw data based on mime type.</p>
+<h3><a name="spinner" id="spinner">Accessibility Support for
+JSpinner and ProgressMonitor</a></h3>
+<p>This release provides accessibility support for spinners and
+progress monitors in Swing.</p>
+
+<!--  footer start -->
+<div id="javasefooter">
+<div class="hr">
+<hr /></div>
+<div id="javasecopyright">
+<img id="oraclelogofooter" src=
+"../../../images/oraclelogo.gif" alt="Oracle and/or its affiliates"
+border="0" width="100" height="29" name=
+"oraclelogofooter" />
+
+<a href="../../../legal/cpyr.html">Copyright
+&#169;</a> 1993, 2011, Oracle and/or its affiliates. All rights
+reserved.</div>
+<div id="javasecontactus">
+<a href=
+"http://download.oracle.com/javase/feedback.html">Contact
+Us</a>
+</div>
+</div>
+<!-- footer end -->
+
+<!-- STATIC FOOTER -->
+
+</body>
+</html>
